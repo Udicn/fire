@@ -312,7 +312,7 @@ u8 LD3320::LD_AsrAddFixed(void)
   
   
   u8 sRecog[DATE_A][DATE_B] = {
-                                    "xiao jie",\
+                                    "zong bu zong bu",\
                                     "dai ma ce shi",\
                                     "ce shi wan bi",\
     

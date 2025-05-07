@@ -12,12 +12,12 @@
   VCC与5V任接其一                                                     
   VCC接3.3V供电，5V接5V供电
   GND--GND
-  SCK--A5
-  MI--A4
-  MO--A3
-  CS--A2
-  RST--5
-  IRQ--3
+  SCK--4
+  MI--6
+  MO--15
+  CS--17
+  RST--3
+  IRQ--9
   WR--GND
 */
 #include "LD3320.h"
@@ -31,10 +31,11 @@ u8 flag=0;
 
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   WE.LD3320_IO_Init();
   WE.LD_Reset();
-  attachInterrupt(1, ProcessInt, FALLING);
+  // attachInterrupt(1, ProcessInt, FALLING); // 原来的代码
+  attachInterrupt(digitalPinToInterrupt(9), ProcessInt, FALLING); // 修改后的代码，假设 IRQ 连接到 GPIO 9
   nAsrStatus = LD_ASR_NONE;    //初始状态：没有在作ASR
   SCS_0;
   Serial.println("Start\r\n");  

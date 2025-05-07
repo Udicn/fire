@@ -5,12 +5,12 @@
 #define u8 unsigned char
 
 
-#define SDCK A5      //SPI 时钟信号
-#define SDO  A4      //SPI 数据输出
-#define SDI  A3     //SPI 数据输入
-#define SCS  A2     //芯片片选信号
-#define RSTB 5     //复位端口
-#define IRQ  3     //中断引脚
+#define SDCK 4      //SPI 时钟信号
+#define SDO  6      //SPI 数据输出
+#define SDI  15     //SPI 数据输入
+#define SCS  17     //芯片片选信号
+#define RSTB 3     //复位端口
+#define IRQ  9     //中断引脚
 
 #define SDCK_1 digitalWrite(SDCK, HIGH)
 #define SDCK_0 digitalWrite(SDCK, LOW)
@@ -78,6 +78,10 @@
 #define CODE_4KL4 0x23
 
 #define CODE_5KL1 0x24
+#define CODE_5KL2 0X25
+#define CODE_5KL3 0X26
+#define CODE_5KL4 0X27
+
 
 class LD3320
 {
